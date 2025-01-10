@@ -1,0 +1,310 @@
+/* Custom CSS */
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: #fbfbfb;
+    animation: refresh 1.9s;
+}
+
+#zonetxt {
+    animation: refresh 0.5s;
+}
+
+.ylocked {
+    overflow-y: hidden;
+}
+.container {
+    margin-left: 0%;
+    margin-top: 7%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    padding-right: 0%;
+    max-width: 100%;
+    white-space: nowrap;
+    animation: fade-up 0.5s;
+    overscroll-behavior-inline: contain;
+}
+
+.container .list-group-item {
+    display: inline-block;
+    color: black;
+    text-align: left;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.list-group-item {
+    background-color: #fbfbfb;
+}
+
+.list-group-item img {
+    width: auto; /* Set the image width to 80% of its container */
+    height: 68vh; /* Maintain the original aspect ratio */
+    object-fit: cover; /* Fill the container while preserving aspect ratio */
+    padding: 0.1rem 1.25rem;
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
+}
+
+.list-group-item .caption {
+    margin-left: 5%;
+}
+
+.caption p {
+    margin-top: 30px;
+}
+
+.contacts .list-group-item {
+    display: inline-block;
+    color: white;
+    text-align: left;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.contacts {
+    animation: fade-up 0.5s;
+}
+.about {
+    animation: fade-up 0.5s;
+}
+
+.text {
+    animation: fade-up 0.5s;
+}
+
+article.cont {
+    grid-template-columns: 1fr 1fr;
+    padding: 8rem 5rem;
+    max-width: 960px;
+    margin: auto;
+    display: grid;
+    grid-gap: 3rem;
+}
+
+.fair_mode {
+    color: black;
+    background: white;
+    animation: black-white 0.3s;
+}
+
+.fair_mode nav a {
+    color: black;
+}
+
+.fair_mode nav ul li a:hover {
+    color: white;
+    background-color: black;
+}
+
+.fair_mode nav ul li a {
+    //font-family: "libre Baskerville", "/fonts/LibreBaskerville-Regular.ttf";
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.dark_mode {
+    color: white;
+    background: black;
+    animation: white-black 0.5s;
+}
+.dark_mode nav a {
+    color: white;
+}
+
+.dark_mode nav ul li a:hover {
+    color: black;
+    background-color: white;
+}
+
+.dark_mode nav ul li a {
+    //font-family: "libre Baskerville", "/fonts/LibreBaskerville-Regular.ttf";
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5%;
+}
+
+a {
+    font-family: "kalufonia", "Helvetica", "Times New Roman", Times, serif;
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+p a {
+    font-family: "sofiapro";
+    text-decoration: underline;
+    color: #000;
+}
+
+section p {
+    line-height: 22px;
+}
+
+.caption p {
+    line-height: 22px;
+}
+
+p {
+    font-family: "sofiapro", "Libre Baskerville", serif;
+    font-size: 14px;
+}
+
+ul {
+    list-style-type: none; /* Removes the default bullet points */
+    margin: 2.1% 0; /* Removes default margin */
+}
+
+li {
+    display: inline; /* Display the list items inline */
+    margin-right: 20px; /* Add some spacing between the list items */
+}
+
+.tete {
+    height: 70%;
+    margin-top: 1%;
+}
+
+#main-header {
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: 3em;
+    padding: 0% 5% 0%;
+    //height: 3.58em;
+    //padding: 0.5% 5% 0%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+#main-header .logo {
+    flex: 1;
+    display: flex;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.88rem 1rem;
+}
+
+.logo .nav-link {
+    //text-transform: uppercase;
+    //color: black;
+    font-size: 3rem;
+    font-family: "kalufonia", "Courier New", Courier, monospace;
+    padding: 1%;
+}
+
+.topPadding {
+    padding-top: 15%;
+}
+
+section img {
+    height: auto;
+    width: 400px;
+    padding: 0% 2% 4%;
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
+}
+
+.largerIMG {
+    height: auto;
+    width: 800px;
+    padding: 2% 2%;
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
+}
+
+.logo p {
+    margin-top: 3%;
+    //color: black;
+    font-size: 2rem;
+    font-family: "kalufonia", "Courier New", Courier, monospace;
+}
+
+.nav-item a {
+    flex: 1;
+}
+
+@keyframes refresh {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(+30px), scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px), scale(1);
+    }
+}
+
+@keyframes white-black {
+    0% {
+        background: white;
+    }
+
+    100% {
+        background: back;
+    }
+}
+
+@keyframes black-white {
+    0% {
+        background: black;
+    }
+
+    100% {
+        background: white;
+    }
+}
+
+@font-face {
+    font-family: "kalufonia";
+    src: url("../fonts/Kalufonia-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "sofiapro";
+    src: url("../fonts/sofiapro-light.otf") format("opentype");
+}
+/* Hide scrollbar for Firefox, Edge, and IE */
+
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    height: 10px; /* height of horizontal scrollbar ← You're missing this */
+    width: 4px; /* width of vertical scrollbar */
+    /*border: 1px solid #d5d5d5;*/
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #000;
+    border-radius: 2px;
+}
