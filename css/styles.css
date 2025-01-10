@@ -8,6 +8,12 @@ body {
     animation: refresh 1.9s;
 }
 
+h2 {
+    font-size: 2.3rem;
+    font-family: kalufonia;
+    font-weight: bold;
+}
+
 #zonetxt {
     animation: refresh 0.5s;
 }
