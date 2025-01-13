@@ -1,36 +1,53 @@
-/* Custom CSS */
-html {
-    //overflow-y: overlay;
-    //scrollbar-gutter: stable;
-}
+/*!
+ * TrippoApp v1.0
+ * Copyright 2012 Trippo, Inc
+ * Licensed under CC BY 3.0
+ * http://creativecommons.org/licenses/by/3.0/
+ *
+ */
 
-body {
-    background-color: #fbfbfb;
-    animation: refresh 1.9s;
-}
+.list-group {
+    display: flex;
 
-h2 {
-    font-size: 2.3em;
-    font-family: kalufonia;
-}
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
 
-#zonetxt {
-    animation: refresh 0.5s;
-}
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 
-.ylocked {
-    overflow-y: hidden;
+    /*
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+  */
 }
-.container {
-    margin-left: 0%;
-    margin-top: 7%;
-    padding-bottom: 5%;
-    padding-left: 2%;
-    padding-right: 0%;
-    max-width: 100%;
-    white-space: nowrap;
-    animation: fade-up 0.5s;
-    overscroll-behavior-inline: contain;
+.list-group::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.list-group::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+.list-group::-webkit-scrollbar-track {
+    background: transparent;
+}
+.list-group > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 400px;
+    //height: 600px;
+    margin-right: 50px;
+    border-radius: 10px;
+    //background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
 }
 
 .container .list-group-item {
@@ -40,14 +57,9 @@ h2 {
     padding: 14px;
     text-decoration: none;
 }
-
-.list-group-item {
-    background-color: #fbfbfb;
-}
-
 .list-group-item img {
     width: auto; /* Set the image width to 80% of its container */
-    height: 68vh; /* Maintain the original aspect ratio */
+    height: auto; /* Maintain the original aspect ratio */
     object-fit: cover; /* Fill the container while preserving aspect ratio */
     padding: 0.1rem 1.25rem;
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
@@ -61,12 +73,86 @@ h2 {
     margin-top: 30px;
 }
 
-.contacts .list-group-item {
-    display: inline-block;
-    color: white;
-    text-align: left;
-    padding: 14px;
-    text-decoration: none;
+.caption p {
+    line-height: 22px;
+}
+
+section img {
+    height: auto;
+    width: 400px;
+    padding: 0% 2% 4%;
+    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
+}
+
+article.cont {
+    grid-template-columns: 55ch auto;
+    padding: 0rem 2rem;
+    max-width: 960px;
+    margin: auto;
+    display: grid;
+    grid-gap: 3rem;
+}
+
+@media (min-width: 1200px) {
+  .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 150vh;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  article.cont {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+/***** STRUCTURE *****/
+
+body {
+    //background: url("../img/bg.png") repeat-x;
+    background-color: #fff;
+    animation: refresh 1.9s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-shadow: white 0.02em 0.02em;
+    font-family: "kalufonia","QlassikBold", sans-serif;
+}
+
+h2 {
+    font-size: 2.3em;
+}
+
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.content {
+    padding-top: 100px;
+    font-size: 1.1em;
+    line-height: 1.8em;
+}
+
+p {
+    font-family: "sofiapro", "Libre Baskerville", serif;
+    font-size: 14px;
+}
+
+.content p {
+    font-size: 1em;
+    line-height: 1.8em;
+    margin-bottom: 1.1em;
+}
+
+#scrollContainer {
+    animation: fade-up 0.5s;
 }
 
 .contacts {
@@ -80,168 +166,173 @@ h2 {
     animation: fade-up 0.5s;
 }
 
-article.cont {
-    grid-template-columns: 40ch auto;
-    padding: 8rem 5rem;
-    max-width: 960px;
-    margin: auto;
-    display: grid;
-    grid-gap: 3rem;
+/***** BODY *****/
+
+.page-title {
+    padding: 100px 0 30px 0;
 }
 
-.fair_mode {
-    color: black;
-    background: white;
-    animation: black-white 0.3s;
+.arrow-top img {
+    margin: -7px 0 0 15px;
 }
 
-.fair_mode nav a {
-    color: black;
+.logo {
+    max-width:3em;s
 }
 
-.fair_mode nav ul li a:hover {
-    color: white;
-    background-color: black;
-}
+/***** NAVIGATION BAR *****/
 
-.fair_mode nav ul li a {
-    //font-family: "libre Baskerville", "/fonts/LibreBaskerville-Regular.ttf";
-    color: black;
-    text-decoration: none;
-    font-size: 1.4vw;
-    text-transform: uppercase;
-}
-
-.dark_mode {
-    color: white;
+.navbar-inner {
     background: black;
-    animation: white-black 0.5s;
-}
-.dark_mode nav a {
-    color: white;
-}
-
-.dark_mode nav ul li a:hover {
-    color: black;
-    background-color: white;
-}
-
-.dark_mode nav ul li a {
-    //font-family: "libre Baskerville", "/fonts/LibreBaskerville-Regular.ttf";
-    color: white;
-    text-decoration: none;
-    font-size: 1.5vw;
-    text-transform: uppercase;
-}
-
-.hidden {
-    display: none;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    padding: 0 5%;
-}
-
-a {
-    font-family: "kalufonia", "Helvetica", "Times New Roman", Times, serif;
-    text-decoration: none;
-    font-size: 1.25em;
-}
-
-p a {
-    font-family: "sofiapro";
-    text-decoration: underline;
-    color: #000;
-}
-
-section p {
-    line-height: 22px;
-}
-
-.caption p {
-    line-height: 22px;
-}
-
-p {
-    font-family: "sofiapro", "Libre Baskerville", serif;
-    font-size: 14px;
-}
-
-ul {
-    list-style-type: none; /* Removes the default bullet points */
-    margin: 2.1% 0; /* Removes default margin */
-}
-
-li {
-    display: inline; /* Display the list items inline */
-    margin-right: 1vw; /* Add some spacing between the list items */
-}
-
-.tete {
-    height: 70%;
-    margin-top: 1%;
-}
-
-#main-header {
-    position: fixed;
-    box-sizing: border-box;
-    top: 0;
-    width: 100vw;
-    z-index: 10;
-    height: 3em;
     padding: 0% 5vw 0%;
-    //height: 3.58em;
-    font-size: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
+    width: 100vw;
 }
-#main-header .logo {
-    flex: 1;
-    display: flex;
+.navbar .brand {
+    //font-family: kalufonia;
+    //font-weight: bold;
+    color: white;
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 30px rgba(255, 255, 255, 0.125);
 }
 
-.nav-link {
+/***** HOMEPAGE *****/
+
+#details {
+    position: relative;
+    float: right;
+    width: 527px;
+    margin-top: 80px;
+    padding-left: 20px;
+}
+
+#icon {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+
+#app-name {
+    position: relative;
+    float: left;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#app-name h1 {
+    font-size: 5.5em;
+    font-size: 5.5em;
+    color: #ececec;
+    text-shadow:
+        -1px 0 #b3b3b3,
+        0 1px #b3b3b3,
+        1px 0 #b3b3b3,
+        0 -1px #b3b3b3,
+        #020763 0.03em 0.03em;
+}
+
+#version {
+    top: 30px;
+    position: relative;
+    float: left;
+}
+
+#tagline {
+    font-size: 1.4em;
+    margin-top: 6em;
+    clear: both;
+}
+
+#description {
+    margin-top: 2em;
+    margin-bottom: 1.8em;
+}
+
+#features li {
+    background: url("../img/check.png") no-repeat left;
+    list-style: none;
+    padding-left: 25px;
+    margin-left: -23px;
+    line-height: 1.7em;
+}
+
+.download-box {
+    width: 45%;
+    float: left;
+    padding-top: 20px;
+    padding-right: 5%;
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+/***** ABOUT PAGE *****/
+
+.updates ul {
+    list-style: none;
+    padding-top: 10px;
+    clear: both;
+    margin: 0 0 25px 0;
+}
+
+.updates ul li {
+    margin-bottom: 10px;
+}
+
+.updates hr {
+    border-top: 1px solid #ccc;
+}
+
+.updates .label {
     display: block;
-    padding: 0.88rem 1rem;
+    float: left;
+    margin-right: 10px;
 }
 
-.logo .nav-link {
-    //text-transform: uppercase;
-    //color: black;
-    font-size: 2.3vw;
-    font-family: "kalufonia", "Courier New", Courier, monospace;
-    //padding: 1%;
+.version {
+    float: left;
 }
 
-.topPadding {
-    padding-top: 15%;
+.release-date {
+    float: right;
+    margin-top: 4px;
+    color: #999;
+    font-size: 0.85em;
 }
 
-section img {
-    height: auto;
-    width: 400px;
-    padding: 0% 2% 4%;
-    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
+.new {
+    background-color: #3a87ad;
 }
 
-.largerIMG {
-    height: auto;
-    width: 800px;
-    padding: 2% 2%;
-    filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
+.fix {
+    background-color: #468847;
+    padding: 1px 8px 2px;
 }
 
-.logo p {
-    margin-top: 3%;
-    //color: black;
-    font-size: 2vw;
-    font-family: "kalufonia", "Courier New", Courier, monospace;
+/***** CONTACT *****/
+
+#contact-form {
+    border-left: 1px solid #cccccc;
 }
 
-.nav-item a {
-    flex: 1;
+#contact-info {
+    padding-bottom: 20px;
+}
+
+/***** FOOTER *****/
+
+.footer {
+    font-size: 0.85em;
+    line-height: 1.5em;
+    padding: 15px 0;
+    border-top: 1px solid #ccc;
+}
+
+#copyright {
+    float: left;
+}
+
+#credits {
+    float: right;
 }
 
 @keyframes refresh {
@@ -266,50 +357,12 @@ section img {
     }
 }
 
-@keyframes white-black {
-    0% {
-        background: white;
-    }
-
-    100% {
-        background: back;
-    }
-}
-
-@keyframes black-white {
-    0% {
-        background: black;
-    }
-
-    100% {
-        background: white;
-    }
+@font-face {
+    font-family: "sofiapro";
+    src: url("../font/sofiapro-light.otf") format("opentype");
 }
 
 @font-face {
     font-family: "kalufonia";
-    src: url("../fonts/Kalufonia-Regular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "sofiapro";
-    src: url("../fonts/sofiapro-light.otf") format("opentype");
-}
-/* Hide scrollbar for Firefox, Edge, and IE */
-
-body {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
-::-webkit-scrollbar {
-    height: 10px; /* height of horizontal scrollbar ← You're missing this */
-    width: 4px; /* width of vertical scrollbar */
-    /*border: 1px solid #d5d5d5;*/
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-    background: #000;
-    border-radius: 2px;
+    src: url("../font/Kalufonia-Regular.otf") format("opentype");
 }
