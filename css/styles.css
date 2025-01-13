@@ -140,6 +140,10 @@ h2 {
     line-height: 1.8em;
 }
 
+a {
+    cursor: pointer;
+}
+
 p {
     font-family: "sofiapro", "Libre Baskerville", serif;
     font-size: 14px;
