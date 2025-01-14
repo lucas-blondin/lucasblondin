@@ -78,6 +78,10 @@
     max-width: 75vw;
 }
 
+.navbar .nav > li > a.highlight {
+    color:white;
+}
+
 section img {
     height: auto;
     width: 400px;
