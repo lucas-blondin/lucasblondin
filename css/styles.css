@@ -34,7 +34,7 @@
 .list-group > div {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: 400px;
+    //width: 400px;
     //height: 600px;
     margin-right: 5rem;
     border-radius: 10px;
@@ -58,8 +58,8 @@
     text-decoration: none;
 }
 .list-group-item img {
-    width: auto; /* Set the image width to 80% of its container */
-    height: 60vh; /* Maintain the original aspect ratio */
+    width: 51vh; /* Set the image width to 80% of its container */
+    height: 57vh; /* Maintain the original aspect ratio */
     object-fit: scale-down; /* Fill the container while preserving aspect ratio */
     padding: 0.1rem 1.25rem;
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
@@ -75,7 +75,7 @@
 
 .caption p {
     line-height: 22px;
-    width: 75vw;
+    max-width: 75vw;
 }
 
 section img {
@@ -110,6 +110,9 @@ article.cont {
 
   img {
       max-width: 33vh;
+  }
+  article.cont {
+      grid-gap: 1rem;
   }
 
   .list-group-item img {
