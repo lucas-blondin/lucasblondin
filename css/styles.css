@@ -75,18 +75,19 @@
 
 .caption p {
     line-height: 22px;
+    width: 75vw;
 }
 
 section img {
     height: auto;
     width: 400px;
-    padding: 0% 2% 4%;
+    padding: 0% 3% 4%;
     filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.2));
 }
 
 article.cont {
     grid-template-columns: 55ch auto;
-    padding: 1rem 0 0 1.5rem;
+    //padding: 1rem 0 0 1rem;
     max-width: 960px;
     margin: auto;
     display: grid;
@@ -168,7 +169,6 @@ p {
     font-size: 1em;
     line-height: 1.8em;
     margin-bottom: 1.1em;
-    width: 80vw;
 }
 
 #scrollContainer {
