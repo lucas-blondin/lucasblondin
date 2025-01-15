@@ -164,6 +164,12 @@ h2 {
   min-height: 100vh;
 }
 
+.blur-load {
+    background-size: cover;
+    width: 51vh;
+    height: 57vh;
+}
+
 .content {
     padding-top: 15vh;
     font-size: 1.1em;
